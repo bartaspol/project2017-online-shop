@@ -1,0 +1,69 @@
+/* navbar */
+.search-bar {
+	padding-top: 1em;
+	padding-bottom: 1em;
+	background: #212221;
+}
+
+.main-navbar {
+	padding-top: 70px;
+}
+
+.navbar-text > a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* search */
+#search-button {
+	text-shadow: 1px 1px 0px #888888
+}
+
+/* fonts */
+p {
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Oswald', sans-serif;
+}
+
+.jumbotron {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.home{
+	padding-bottom: 80px;
+}
+
+/* thumbnail */
+.thumbnail img:hover {
+	transform: scale(1.1);
+}
+
+.thumbnail img {
+	transition: all 0.3s ease 0s;
+	width: 100%;
+}
+
+.thumbnail {
+	overflow: hidden;
+/* 	width: 100%; */
+    height: 300px;  
+}
+
+/* errors */
+.errors {
+	color: #d7594b;
+	font-weight: bold;
+}
+
+/* pagination */
+.pagination {
+	font-size: x-large;
+}
+
+.pag {
+	text-align: center;
+}
