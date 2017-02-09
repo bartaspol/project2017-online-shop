@@ -6,18 +6,34 @@
 <tiles-definitions>
 	<definition name="app.default" template="/WEB-INF/layouts/default.jsp">
 		<put-attribute name="title" value="Project by Bartosz Piatek" />
+		<put-attribute name="contact-popup" value="/WEB-INF/tiles/contact.jsp"></put-attribute>
 	</definition>
-	
+
 	<definition name="app.homepage" extends="app.default">
 		<put-attribute name="content" value="/WEB-INF/tiles/home.jsp" />
 	</definition>
-	
+
 	<definition name="app.addProduct" extends="app.default">
 		<put-attribute name="content" value="/WEB-INF/tiles/addProduct.jsp" />
 	</definition>
-	
+
 	<definition name="app.editProduct" extends="app.default">
 		<put-attribute name="content" value="/WEB-INF/tiles/editProduct.jsp" />
 	</definition>
-	
+
+	<definition name="app.login" extends="app.default">
+		<put-attribute name="content" value="/WEB-INF/tiles/login.jsp" />
+	</definition>
+
+	<definition name="app.register" extends="app.default">
+		<put-attribute name="content" value="/WEB-INF/tiles/register.jsp" />
+	</definition>
+
+	<definition name="app.message" extends="app.default">
+		<put-attribute name="content" value="/WEB-INF/tiles/message.jsp" />
+	</definition>
+
+	<definition name="app.exception" extends="app.default">
+		<put-attribute name="content" value="/WEB-INF/tiles/exception.jsp" />
+	</definition>
 </tiles-definitions>

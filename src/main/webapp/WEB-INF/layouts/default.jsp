@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
 
 <!DOCTYPE html>
 <html>
@@ -14,7 +15,7 @@
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 <!-- VARIABLES -->
 <c:url var="search" value="/search" />
-<!-- FONT -->
+<!-- FONTS -->
 <link href="https://fonts.googleapis.com/css?family=Open+Sans"
 	rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Oswald"
@@ -65,7 +66,7 @@
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="/"><i class="fa fa-home"
+					<li class="active"><a href="${contextRoot}/"><i class="fa fa-home"
 							aria-hidden="true"></i> Home</a></li>
 					<li class="dropdown"><a class="dropdown-toggle"
 						data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
@@ -75,20 +76,43 @@
 							<li><a href="#">Page 1-3</a></li>
 						</ul></li>
 					<li><a href="#">Page 2</a></li>
-					<li><a href="/addproduct">Dodaj produkt</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"> Załóż konto</a></li>
-					<li><a href="#"><i class="fa fa-sign-in"
-							aria-hidden="true"></i> Zaloguj się</a></li>
-					<li><a href="#"><i class="fa fa-phone-square" aria-hidden="true"></i> Kontakt</a></li>
+					
+				
+				
+<!-- 				LOGIN -->
+					<sec:authorize access="!isAuthenticated()">
+						<li><a href="${contextRoot}/register"><i class="fa fa-user-plus" aria-hidden="true"></i> Załóż konto</a></li>
+						<li><a href="${contextRoot}/login"><i class="fa fa-sign-in" aria-hidden="true"></i> Zaloguj się</a></li>
+					</sec:authorize>
+					
+<!-- 				SHOW IF ADMIN -->
+					<sec:authorize access="hasRole('ROLE_ADMIN')">
+						<li><a href="${contextRoot}/addproduct"><i class="fa fa-plus-square" aria-hidden="true"></i> Dodaj produkt</a></li>
+					</sec:authorize>
+					
+<!-- 				IF LOGGED IN -->
+					<sec:authorize access="isAuthenticated()">
+					
+					<li><a href="${contextRoot}/profile"><i class="fa fa-user" aria-hidden="true"></i> Moje konto</a></li>
+					
+<!-- 				LOGOUT -->
+						<li><a href="javascript:$('#logoutForm').submit();">
+							<i class="fa fa-sign-out" aria-hidden="true"></i> Wyloguj się</a></li>
+					</sec:authorize>
+					
+					<li><a href="#contact" data-toggle="modal"><i class="fa fa-phone-square" aria-hidden="true"></i> Kontakt</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
 
+	<c:url var="logoutLink" value="/logout"/>
+	<form id="logoutForm" method="post" action="${logoutLink}">
+		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+	</form>
 
-	<!-- 		SITE CONTENT -->
 	<tiles:insertAttribute name="content" />
 
 
@@ -106,6 +130,8 @@
 		</div>
 	</div>
 
+	<!-- 	CONTACT POPUP -->
+	<tiles:insertAttribute name="contact-popup" />
 
 	<!-- 	JAVA SCRIPT -->
 	<!-- 	Bootstrap -->

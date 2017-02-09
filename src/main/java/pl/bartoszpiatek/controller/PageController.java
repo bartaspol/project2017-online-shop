@@ -1,6 +1,9 @@
 package pl.bartoszpiatek.controller;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +19,9 @@ public class PageController {
 	
 	@Autowired
 	private ProductService productService;
+	
+	@Value("${message.error.forbidden}")
+	private String accessDeniedMessage;
 
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
@@ -31,4 +37,13 @@ public class PageController {
 		return modelAndView;
 	}
 	
+	@RequestMapping("/403")
+	ModelAndView accessDenied(ModelAndView modelAndView, HttpServletResponse response) {
+		int status = response.getStatus();
+		
+		modelAndView.getModel().put("status", status);
+		modelAndView.getModel().put("message", accessDeniedMessage);
+		modelAndView.setViewName("app.message");
+		return modelAndView;
+	}
 }
