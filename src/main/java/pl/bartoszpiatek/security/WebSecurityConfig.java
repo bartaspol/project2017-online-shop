@@ -30,7 +30,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers(
 						"/",
 						"/register",
-						"/dupa"
+						"/productphoto",
+						"/product/*"
 						)
 				.permitAll()
 				.antMatchers(
@@ -43,7 +44,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers(
 						"/addproduct",
 						"/editproduct",
-						"/deleteproduct"
+						"/deleteproduct",
+						"/upload-product-photo"
 						)
 				.hasRole("ADMIN")
 //			ONLY FOR LOGGED USERS	
@@ -67,7 +69,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.permitAll();
 
 //		EXCEPTIONS HANDLING
-		http.exceptionHandling().accessDeniedPage("/403");
+//		http.exceptionHandling().accessDeniedPage("/403");
 
 	}
 	

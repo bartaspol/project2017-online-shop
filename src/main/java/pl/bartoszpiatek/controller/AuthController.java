@@ -1,7 +1,5 @@
 package pl.bartoszpiatek.controller;
 
-import java.io.FileNotFoundException;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
