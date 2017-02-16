@@ -7,6 +7,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,6 +23,7 @@ import javax.validation.constraints.Size;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import pl.bartoszpiatek.model.dto.FileInfo;
+import pl.bartoszpiatek.model.dto.ProductCategoryEnum;
 
 @Entity
 @Table(name = "PRODUCTS")
@@ -39,8 +42,8 @@ public class Product implements Serializable {
 	private String name;
 
 	@NotNull
-	@Size(min = 10, max = 5000, message = "{addproduct.description.size}")
-	@Column(name = "PRODUCT_DESC", length = 5000)
+	@Size(min = 10, max = 300, message = "{addproduct.description.size}")
+	@Column(name = "PRODUCT_DESC", length = 300)
 	private String description;
 
 	@Column(name = "PRODUCT_ADDED")
@@ -48,8 +51,12 @@ public class Product implements Serializable {
 	@DateTimeFormat(pattern = "yyyy/MM/dd hh:mm:ss")
 	private Date added;
 
+	@Enumerated(EnumType.STRING)
+	@Column(name = "PRODUCT_CATEGORY")
+	private ProductCategoryEnum category;
+
 	@NotNull
-	@Min(value = 0, message="{addproduct.price.value}")
+	@Min(value = 0, message = "{addproduct.price.value}")
 	@Column(name = "PRODUCT_PRICE")
 	private Double price;
 
@@ -66,7 +73,6 @@ public class Product implements Serializable {
 	protected void onCreate() {
 		if (added == null)
 			added = new Date();
-
 	}
 
 	public Product(String name, String description) {
@@ -79,8 +85,8 @@ public class Product implements Serializable {
 		this.description = description;
 		this.added = added;
 	}
-	
-	public Product(String name, String description, Double price ,Date added) {
+
+	public Product(String name, String description, Double price, Date added) {
 		this.name = name;
 		this.description = description;
 		this.added = added;
@@ -96,6 +102,14 @@ public class Product implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public ProductCategoryEnum getCategory() {
+		return category;
+	}
+
+	public void setCategory(ProductCategoryEnum category) {
+		this.category = category;
 	}
 
 	public String getName() {
@@ -237,10 +251,11 @@ public class Product implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", name=" + name + ", description=" + description + ", added=" + added + ", price="
-				+ price + ", photoDirectory=" + photoDirectory + ", photoName=" + photoName + ", photoExtension="
-				+ photoExtension + "]";
+		return "Product [id=" + id + ", name=" + name + ", description=" + description + ", added=" + added
+				+ ", category=" + category + ", price=" + price + ", photoDirectory=" + photoDirectory + ", photoName="
+				+ photoName + ", photoExtension=" + photoExtension + "]";
 	}
 
 	
+
 }

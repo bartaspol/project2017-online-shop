@@ -19,12 +19,29 @@ public class ProductDetails {
 	private Long id;
 	
 	
-	
 	@OneToOne(targetEntity = Product.class)
 	@JoinColumn(name = "PRODUCT_ID", nullable = false)
 	private Product product;
 	
-	@Column(name = "PRODUCT_PRICE", nullable = false)
-	private Double price;
+	
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+
+	
+	
+	
 }

@@ -27,8 +27,6 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 
-
-
 <title><tiles:insertAttribute name="title" /></title>
 </head>
 <body>
@@ -37,21 +35,18 @@
 	<div class="row search-bar navbar-fixed-top">
 		<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
 
-			<form action="${search}" method="post">
-				<input type="hidden" name="${_csrf.parameterName}"
-					value="${_csrf.token}" />
+			<form action="${search}" method="get">
+<%-- 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> --%>
 
 				<div class="input-group input-group-lg">
-					<input type="text" class="form-control" name="s"
-						placeholder="czego szukasz?"> <span
-						class="input-group-btn">
+					<input type="text" class="form-control" name="s" placeholder="czego szukasz?"> 
+					<span class="input-group-btn">
 						<button id="search-button" class="btn btn-primary" type="submit">Szukaj</button>
 					</span>
 				</div>
 			</form>
 		</div>
 	</div>
-
 
 	<!-- 	NAVBAR -->
 	<nav class="navbar navbar-inverse main-navbar">
@@ -68,18 +63,19 @@
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="${contextRoot}/"><i class="fa fa-home"
 							aria-hidden="true"></i> Home</a></li>
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Page 1-1</a></li>
-							<li><a href="#">Page 1-2</a></li>
-							<li><a href="#">Page 1-3</a></li>
-						</ul></li>
-					<li><a href="#">Page 2</a></li>
+							
+<!-- 					<li class="dropdown"><a class="dropdown-toggle" -->
+<!-- 						data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a> -->
+<!-- 						<ul class="dropdown-menu"> -->
+<!-- 							<li><a href="#">Page 1-1</a></li> -->
+<!-- 							<li><a href="#">Page 1-2</a></li> -->
+<!-- 							<li><a href="#">Page 1-3</a></li> -->
+<!-- 						</ul></li> -->
+
+					<li><a href="/cameras">Aparaty</a></li>
+					<li><a href="/lenses">Obiektywy</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					
-				
 				
 <!-- 				LOGIN -->
 					<sec:authorize access="!isAuthenticated()">
@@ -113,6 +109,9 @@
 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 	</form>
 
+<!-- 	CONTENT 	-->
+<!-- 	OF 			-->
+<!-- 	THE PAGE 	-->
 	<tiles:insertAttribute name="content" />
 
 

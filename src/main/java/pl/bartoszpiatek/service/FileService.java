@@ -1,4 +1,4 @@
-package pl.bartoszpiatek.repository;
+package pl.bartoszpiatek.service;
 
 import java.io.File;
 import java.io.IOException;

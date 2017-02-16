@@ -1,6 +1,7 @@
 package pl.bartoszpiatek.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -13,7 +14,8 @@ import pl.bartoszpiatek.repository.ProductDao;
 public class ProductService {
 
 //	number of products on the page
-	private final static int PAGE_SIZE = 6;
+	@Value("${product.pagesize}")
+	private int PAGE_SIZE;
 	
 	@Autowired
 	private ProductDao productDao; 
@@ -39,4 +41,5 @@ public class ProductService {
 	public Product get(Long id) {
 		return productDao.findOne(id);
 	}
+	
 }

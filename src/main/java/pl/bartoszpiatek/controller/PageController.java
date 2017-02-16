@@ -19,6 +19,7 @@ public class PageController {
 	
 	@Autowired
 	private ProductService productService;
+
 	
 	@Value("${photo.upload.directory}")
 	private String baseDir;
@@ -33,6 +34,7 @@ public class PageController {
 		
 		Product product = productService.getLatest();
 		Page<Product> page = productService.getPage(pageNumber);
+		
 
 		modelAndView.getModel().put("page", page);
 		modelAndView.getModel().put("product", product);

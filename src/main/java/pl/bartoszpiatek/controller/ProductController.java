@@ -27,8 +27,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import pl.bartoszpiatek.exceptions.InvalidFileException;
 import pl.bartoszpiatek.model.dto.FileInfo;
+import pl.bartoszpiatek.model.dto.ProductCategoryEnum;
 import pl.bartoszpiatek.model.entity.Product;
-import pl.bartoszpiatek.repository.FileService;
+import pl.bartoszpiatek.service.FileService;
 import pl.bartoszpiatek.service.ProductService;
 
 @Controller
@@ -37,6 +38,8 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 	
+
+	
 	@Autowired
 	private FileService fileService;
 
@@ -44,8 +47,10 @@ public class ProductController {
 	private String photoUploadDirectory;
 
 	@RequestMapping(value = "/addproduct", method = RequestMethod.GET)
-	ModelAndView addProductGET(ModelAndView modelAndView, @ModelAttribute("product") Product product) {
+	ModelAndView addProductGET(ModelAndView modelAndView, @ModelAttribute("product") Product product, 
+			ProductCategoryEnum categories) {
 
+		modelAndView.getModel().put("categories", ProductCategoryEnum.values());
 		modelAndView.setViewName("app.addProduct");
 		return modelAndView;
 	}
@@ -55,7 +60,8 @@ public class ProductController {
 			@RequestParam("file") MultipartFile file) {
 
 		modelAndView.setViewName("app.addProduct");
-
+	
+		
 		Path oldPotoPath = product.getPhoto(photoUploadDirectory);
 		
 		try {
@@ -75,6 +81,7 @@ public class ProductController {
 		}
 
 		if (!result.hasErrors()) {
+			
 			productService.save(product);
 			modelAndView.setViewName("redirect:/");
 		}

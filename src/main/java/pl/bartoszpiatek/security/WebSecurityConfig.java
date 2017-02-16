@@ -31,7 +31,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 						"/",
 						"/register",
 						"/productphoto",
-						"/product/*"
+						"/product/*",
+						"/search",
+						"/cameras",
+						"/lenses"
 						)
 				.permitAll()
 				.antMatchers(
@@ -50,7 +53,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.hasRole("ADMIN")
 //			ONLY FOR LOGGED USERS	
 				.antMatchers(
-						"/profile"
+						"/profile",
+						"/editprofile",
+						"/editabout"
 						)
 				.authenticated()
 				.anyRequest()

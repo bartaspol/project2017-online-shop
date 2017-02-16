@@ -40,4 +40,8 @@ public class SiteUserService implements UserDetailsService{
 		
 		return new User(email, password, enabled, true, true, true, auth);
 	}
+
+	public SiteUser getByEmail(String email) {
+		return siteUserDao.findByEmail(email);
+	}
 }

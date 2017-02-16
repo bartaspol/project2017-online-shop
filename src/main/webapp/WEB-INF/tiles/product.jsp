@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 
 
-<div class="container">
+<div class="container home">
 	<div class="page-header">
 		<h1 class="text-danger text-center text-uppercase">${product.name}</h1>
 	</div>
@@ -34,8 +34,8 @@
 			<table class="table table-boardered table-striped">
 				<tbody>
 					<tr>
-						<td>Marka</td>
-						<td>jakas tam</td>
+						<td>Kategoria</td>
+						<td>${product.category}</td>
 					</tr>
 					<tr>
 						<td>Wlsciwosc</td>

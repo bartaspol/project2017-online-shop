@@ -1,9 +1,11 @@
 package pl.bartoszpiatek.repository;
 
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import pl.bartoszpiatek.model.entity.ProductDetails;
 
+@Repository
 public interface ProductDetailsDao extends CrudRepository<ProductDetails, Long>{
 
 }
