@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "PRODUCTS_DETAILS")
 public class ProductDetails {
-
+ 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "PRODUCT_DETAILS_ID")
