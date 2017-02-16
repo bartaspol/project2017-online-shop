@@ -4,7 +4,7 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-        <property name="context-root" value="project2017"/>
         <property name="java-output-path" value="/project2017/target/classes"/>
+        <property name="context-root" value="project-2017"/>
     </wb-module>
 </project-modules>
