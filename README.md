@@ -16,7 +16,7 @@ One user has ADMIN privilages which allows to add, edit or delete products.
 - stored passwords are BCrypt encrypted
 
 <h2>Technologies used to create project</h2>
-- Sprong Boot (e.g. Data, Security)
+- Spring Boot (e.g. Data, Security)
 - Apache Tiles 3
 - JSP / JSTL
 - MySQL
