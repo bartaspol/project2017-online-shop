@@ -19,7 +19,6 @@
 		<pagin:pagination size="5" url="${contextRoot}" page="${page}" />
 	</div>
 <!-- 	<div class="row"> -->
-
 		<c:forEach var="product" items="${page.content}">
 <!-- 		VARIABLES -->
 			<c:url var="editButtonLink" value="/editproduct?id=${product.id}"/>

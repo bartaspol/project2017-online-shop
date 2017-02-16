@@ -34,7 +34,7 @@
 </c:if>
 
 <div class="pag">
-	<pagin:pagination size="5" url="${searchUrl}" page="${page}" />
+	<pagin:pagination size="5 " url="${searchUrl}" page="${page}" />
 </div>
 
 <c:forEach var="result" items="${page.content}">
