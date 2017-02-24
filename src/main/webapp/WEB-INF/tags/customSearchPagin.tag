@@ -44,7 +44,7 @@
 			<c:choose>
 			
 				<c:when test="${page.number != pageNumber - 1}">
-					<a href="${contextRoot}/${url}?s=${search}&p=${pageNumber}&b=${block}&f=${priceFrom}&t=${priceTo}"> <c:out
+					<a href="${url}?s=${search}&p=${pageNumber}&b=${block}&f=${priceFrom}&t=${priceTo}"> <c:out
 							value="${pageNumber}" />
 					</a>
 				</c:when>
@@ -62,7 +62,7 @@
 		</c:forEach>
 		
 		<c:if test="${endPage != page.totalPages}">
-			<a href="${contextRoot}/${url}?s=${search}&b=${block + 1}&p=${(block + 1) * size + 1}&f=${priceFrom}&t=${priceTo}">&gt;&gt;</a>
+			<a href="${url}?s=${search}&b=${block + 1}&p=${(block + 1) * size + 1}&f=${priceFrom}&t=${priceTo}">&gt;&gt;</a>
 		</c:if>
 	</div>
 </c:if>
