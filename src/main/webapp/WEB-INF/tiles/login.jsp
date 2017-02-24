@@ -4,7 +4,7 @@
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 <c:url var="loginUrl" value="/login"/>
 
-<div class="container">
+<div class="container home">
 	<div class="login-form">
 		<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 		

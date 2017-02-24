@@ -11,7 +11,7 @@
 	</div>
 
 <div class="pag">
-	<pagin:pagination size="5" url="${url}" page="${page}" />
+	<pagin:pagination_category size="5" url="${url}" page="${page}" />
 </div>
 
 <c:forEach var="result" items="${page.content}">
@@ -52,6 +52,6 @@
 	
 </c:forEach>
 <div class="pag">
-	<pagin:pagination size="5" url="${url}" page="${page}" />
+	<pagin:pagination_category size="5" url="${url}" page="${page}" />
 </div>
 </div>

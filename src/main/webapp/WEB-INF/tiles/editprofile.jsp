@@ -4,7 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
-<div class="container">
+<div class="container home">
 	<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 		<div class="text-center">
 			<div class="page-header">

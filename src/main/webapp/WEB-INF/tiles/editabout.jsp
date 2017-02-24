@@ -4,7 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 
-<div class="container">
+<div class="container home">
 	<div class="login-form">
 	<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 

@@ -10,7 +10,7 @@
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 
 
-<div class="container">
+<div class="container home">
 		<div class="jumbotron text-center">
 			<div class="profile">
 				<h1 class="text-uppercase">
