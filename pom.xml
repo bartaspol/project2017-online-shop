@@ -86,6 +86,28 @@
 <!-- 					<executable>true</executable> -->
 <!-- 				</configuration> -->
 			</plugin>
+			<plugin>
+				<groupId>org.codehaus.cargo</groupId>
+				<artifactId>cargo-maven2-plugin</artifactId>
+				<version>1.6.2</version>
+				<configuration>
+					<container>
+						<containerId>tomcat8x</containerId>
+						<home>${catalina.base}</home>
+					</container>
+					<configuration>
+						<type>existing</type>
+						<home>${catalina.base}</home>
+					</configuration>
+					<deployables>
+						<deployable>
+							<properties>
+								<context>project2017</context>
+							</properties>
+						</deployable>
+					</deployables>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 	<packaging>war</packaging>
