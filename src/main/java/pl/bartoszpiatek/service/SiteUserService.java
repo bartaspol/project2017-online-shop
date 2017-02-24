@@ -36,6 +36,8 @@ public class SiteUserService implements UserDetailsService{
 		
 		List<GrantedAuthority> auth = AuthorityUtils.commaSeparatedStringToAuthorityList(user.getRole());
 		String password = user.getPassword();
+//		Boolean enabled = user.getEnabled();
+		user.setEnabled(true);
 		Boolean enabled = user.getEnabled();
 		
 		return new User(email, password, enabled, true, true, true, auth);

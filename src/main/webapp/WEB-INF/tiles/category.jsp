@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="pagin" tagdir="/WEB-INF/tags"%>
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
+<c:set var="url" value="${contextRoot}/${url}" />
 
 <div class="container home">
 	<div class="page-header">
