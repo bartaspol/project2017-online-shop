@@ -9,6 +9,8 @@
 <%@ attribute name="priceFrom" required="true"%>
 <%@ attribute name="priceTo" required="true"%>
 
+<c:set var="contextRoot" value="${pageContext.request.contextPath}" />
+
 <%-- <c:set var="priceFrom" value="${empty param.f ? 0 : param.f}"></c:set> --%>
 <%-- <c:set var="priceTo" value="${empty param.t ? 1000000 : param.t}"></c:set> --%>
 <c:set var="search" value="${empty param.s ? 0 : param.s}"></c:set>
@@ -42,7 +44,7 @@
 			<c:choose>
 			
 				<c:when test="${page.number != pageNumber - 1}">
-					<a href="${url}?s=${search}&p=${pageNumber}&b=${block}&f=${priceFrom}&t=${priceTo}"> <c:out
+					<a href="${contextRoot}/${url}?s=${search}&p=${pageNumber}&b=${block}&f=${priceFrom}&t=${priceTo}"> <c:out
 							value="${pageNumber}" />
 					</a>
 				</c:when>
@@ -60,7 +62,7 @@
 		</c:forEach>
 		
 		<c:if test="${endPage != page.totalPages}">
-			<a href="${url}?s=${search}&b=${block + 1}&p=${(block + 1) * size + 1}&f=${priceFrom}&t=${priceTo}">&gt;&gt;</a>
+			<a href="${contextRoot}/${url}?s=${search}&b=${block + 1}&p=${(block + 1) * size + 1}&f=${priceFrom}&t=${priceTo}">&gt;&gt;</a>
 		</c:if>
 	</div>
 </c:if>
