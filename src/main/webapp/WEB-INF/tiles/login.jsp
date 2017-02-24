@@ -2,13 +2,13 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
-
+<c:url var="loginUrl" value="/login"/>
 
 <div class="container">
 	<div class="login-form">
 		<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 		
-			<form class="form-signin" method="post" action="/login">
+			<form class="form-signin" method="post" action="${loginUrl}">
 				
 <!-- 			TOKEN -->
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />

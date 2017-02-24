@@ -20,12 +20,12 @@
 	<c:choose>
 		<c:when test="${empty search}">
 			<c:if test="${block != 0}">
-				<a href="/${url}?b=${block - 1}&p=${(block - 1) * size + 1}">&lt;&lt;</a>
+				<a href="${url}/?b=${block - 1}&p=${(block - 1) * size + 1}">&lt;&lt;</a>
 			</c:if>
 		</c:when>
 		<c:otherwise>
 		<c:if test="${block != 0}">
-			<a href="/${url}?s=${search}&b=${block - 1}&p=${(block - 1) * size + 1}">&lt;&lt;</a>
+			<a href="${url}/?s=${search}&b=${block - 1}&p=${(block - 1) * size + 1}">&lt;&lt;</a>
 			</c:if>
 		</c:otherwise>
 	</c:choose>
@@ -37,7 +37,7 @@
 			<c:choose>
 			
 				<c:when test="${page.number != pageNumber - 1}">
-					<a href="/${url}?s=${search}&p=${pageNumber}&b=${block}"> <c:out
+					<a href="${url}/?s=${search}&p=${pageNumber}&b=${block}"> <c:out
 							value="${pageNumber}" />
 					</a>
 				</c:when>
@@ -55,7 +55,7 @@
 		</c:forEach>
 		
 		<c:if test="${endPage != page.totalPages}">
-			<a href="/${url}?s=${search}&b=${block + 1}&p=${(block + 1) * size + 1}">&gt;&gt;</a>
+			<a href="${url}/?s=${search}&b=${block + 1}&p=${(block + 1) * size + 1}">&gt;&gt;</a>
 		</c:if>
 	</div>
 </c:if>
