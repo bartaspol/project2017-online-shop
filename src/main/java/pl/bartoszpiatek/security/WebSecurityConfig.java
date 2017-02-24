@@ -80,19 +80,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	}
 	
-//	@Autowired
-//	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception{
-//		auth.inMemoryAuthentication()
-//			.withUser("bart")
-//			.password("bartaspol")
-//			.roles("USER");
-//	}
-
-	
-	@Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(siteUserService).passwordEncoder(passwordEncoder);
-	
+	@Autowired
+	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception{
+		auth.inMemoryAuthentication()
+			.withUser("bart")
+			.password("bartaspol")
+			.roles("ADMIN");
 	}
+
+//	
+//	@Override
+//	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//		auth.userDetailsService(siteUserService).passwordEncoder(passwordEncoder);
+//	
+//	}
 	
 }

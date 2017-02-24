@@ -9,8 +9,6 @@
 <%@ attribute name="priceFrom" required="true"%>
 <%@ attribute name="priceTo" required="true"%>
 
-<c:set var="contextRoot" value="${pageContext.request.contextPath}" />
-
 <%-- <c:set var="priceFrom" value="${empty param.f ? 0 : param.f}"></c:set> --%>
 <%-- <c:set var="priceTo" value="${empty param.t ? 1000000 : param.t}"></c:set> --%>
 <c:set var="search" value="${empty param.s ? 0 : param.s}"></c:set>

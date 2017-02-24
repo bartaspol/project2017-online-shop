@@ -18,7 +18,7 @@
 	</div>
 
 	<div class="pag">
-		<pagin:customSearchPagin priceFrom="${null}" priceTo="${null}" size="5" url="${contextRoot}" page="${page}" />
+		<pagin:pagination size="5" url="${contextRoot}" page="${page}" />
 	</div>
 <!-- 	<div class="row"> -->
 		<c:forEach var="product" items="${page.content}">
