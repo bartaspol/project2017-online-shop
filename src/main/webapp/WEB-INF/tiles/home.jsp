@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
+<%@ taglib uri="http://www.springframework.org/security/tags"
+	prefix="sec"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib prefix="pagin" tagdir="/WEB-INF/tags"%>
 
@@ -21,15 +23,15 @@
 <!-- 	<div class="row"> -->
 		<c:forEach var="product" items="${page.content}">
 <!-- 		VARIABLES -->
-			<c:url var="editButtonLink" value="/editproduct?id=${product.id}"/>
-			<c:url var="deleteButtonLink" value="/deleteproduct?id=${product.id}"/>
+			<c:url var="editButtonLink" value="editproduct?id=${product.id}"/>
+			<c:url var="deleteButtonLink" value="deleteproduct?id=${product.id}"/>
 			
 <!-- 		PRODUCT  -->
 
 		<section class="col-xs-12 col-sm-6 col-md-12">
 			<article class="search-result row">
 				<div class="col-xs-12 col-sm-12 col-md-3">
-					<a href="/product/${product.id}" title="Lorem ipsum" class="thumbnail"><img src="/productphoto?id=${product.id}" alt="Lorem ipsum" /></a>
+					<a href="${contextRoot}/product/${product.id}" title="Lorem ipsum" class="thumbnail"><img src="${contextRoot}/productphoto?id=${product.id}" alt="Lorem ipsum" /></a>
 				</div>
 	<!-- 			<div class="col-xs-12 col-sm-12 col-md-2"> -->
 	<!-- 				<ul class="meta-search"> -->
@@ -39,7 +41,7 @@
 	<!-- 				</ul> -->
 	<!-- 			</div> -->
 				<div class="col-xs-12 col-sm-12 col-md-7 excerpet">
-					<h2 class="text-uppercase"><a href="/product/${product.id}" title="">${product.name}</a></h2>
+					<h2 class="text-uppercase"><a href="${contextRoot}/product/${product.id}" title="">${product.name}</a></h2>
 					<p>${product.description}</p>	
 					<h2 class="text-danger">${product.price} ZŁ</h2>					
 				</div>

@@ -48,9 +48,9 @@ public class ProductController {
 
 	@RequestMapping(value = "/addproduct", method = RequestMethod.GET)
 	ModelAndView addProductGET(ModelAndView modelAndView, @ModelAttribute("product") Product product, 
-			ProductCategoryEnum categories) {
+			ProductCategoryEnum categories){
 
-		modelAndView.getModel().put("categories", ProductCategoryEnum.values());
+		modelAndView.getModel().put("categories", ProductCategoryEnum.values());		
 		modelAndView.setViewName("app.addProduct");
 		return modelAndView;
 	}

@@ -5,8 +5,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 <!-- VARIABLES -->
-<c:url var="editProfileLink" value="/editprofile" />
-<c:url var="editAboutLink" value="/editabout" />
+<c:url var="editProfileLink" value="${contextRoot}/editprofile" />
+<c:url var="editAboutLink" value="${contextRoot}/editabout" />
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 
 

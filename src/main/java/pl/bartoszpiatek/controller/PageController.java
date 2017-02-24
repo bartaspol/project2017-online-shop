@@ -30,7 +30,9 @@ public class PageController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	ModelAndView home(ModelAndView modelAndView,
-			@RequestParam(name = "p", defaultValue = "1") int pageNumber) {
+			@RequestParam(name = "p", defaultValue = "1") int pageNumber,
+			@RequestParam(name = "f", required=false) Integer priceFrom,
+			@RequestParam(name = "t", required=false) Integer priceTo) {
 		
 		Product product = productService.getLatest();
 		Page<Product> page = productService.getPage(pageNumber);

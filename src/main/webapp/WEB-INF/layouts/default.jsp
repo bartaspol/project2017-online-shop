@@ -72,8 +72,8 @@
 <!-- 							<li><a href="#">Page 1-3</a></li> -->
 <!-- 						</ul></li> -->
 
-					<li><a href="/cameras">Aparaty</a></li>
-					<li><a href="/lenses">Obiektywy</a></li>
+					<li><a href="${contextRoot}/cameras">Aparaty</a></li>
+					<li><a href="${contextRoot}/lenses">Obiektywy</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 				

@@ -63,4 +63,47 @@ public class SearchService {
 	}
 	
 	
+	public Page<SearchResult> byNameAndPriceLessThan(String text, Double high, int pageNumber) {
+
+		PageRequest request = new PageRequest(pageNumber - 1, PAGE_SIZE, Sort.Direction.DESC, "price");
+		Page<Product> results = productDao.findByNameContainingIgnoreCaseAndPriceLessThan(text, high, request);
+		
+		Converter<Product, SearchResult> converter = new Converter<Product, SearchResult>() {
+			
+			@Override
+			public SearchResult convert(Product product) {
+				return new SearchResult(product);
+			}
+		};
+		return results.map(converter);
+	}
+	public Page<SearchResult> byNameAndPriceGreaterThan(String text, Double low, int pageNumber) {
+
+		PageRequest request = new PageRequest(pageNumber - 1, PAGE_SIZE, Sort.Direction.DESC, "price");
+		Page<Product> results = productDao.findByNameContainingIgnoreCaseAndPriceGreaterThan(text, low, request);
+		
+		Converter<Product, SearchResult> converter = new Converter<Product, SearchResult>() {
+			
+			@Override
+			public SearchResult convert(Product product) {
+				return new SearchResult(product);
+			}
+		};
+		return results.map(converter);
+	}
+
+	public Page<SearchResult> byNameAndPriceBetween(String text, Double priceFrom, Double priceTo, int pageNumber) {
+		PageRequest request = new PageRequest(pageNumber - 1, PAGE_SIZE, Sort.Direction.DESC, "price");
+		Page<Product> results = productDao.findByNameContainingIgnoreCaseAndPriceBetween(text, priceFrom, priceTo, request);
+		
+		Converter<Product, SearchResult> converter = new Converter<Product, SearchResult>() {
+			
+			@Override
+			public SearchResult convert(Product product) {
+				return new SearchResult(product);
+			}
+		};
+		return results.map(converter);
+	}
+	
 }

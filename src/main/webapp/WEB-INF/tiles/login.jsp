@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-	
+<c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 <c:url var="loginUrl" value="/login"/>
 
 <div class="container">
@@ -14,7 +14,7 @@
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 			
 				<h2 class="form-signin-heading text-center">Zaloguj się</h2>
-				<a href="/register">Nie masz konta?</a> 
+				<a href="${contextRoot}/register">Nie masz konta?</a> 
 				
 <!-- 				IF PASSWORD OR USERNAME IS INCORRECT -->
 				<c:if test="${param.error != null }">

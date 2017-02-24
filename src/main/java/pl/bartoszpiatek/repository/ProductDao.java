@@ -20,5 +20,9 @@ public interface ProductDao extends PagingAndSortingRepository<Product, Long>{
 
 	public Page<Product> findByCategory(ProductCategoryEnum text, Pageable request);
 	
+	public Page<Product> findByNameContainingIgnoreCaseAndPriceBetween(String text, Double low, Double high, Pageable request);
 	
+	public Page<Product> findByNameContainingIgnoreCaseAndPriceLessThan(String text, Double high, Pageable request);
+	
+	public Page<Product> findByNameContainingIgnoreCaseAndPriceGreaterThan(String text, Double low,Pageable request);
 }

@@ -75,8 +75,6 @@ public class ProfileController {
 		SiteUser user = getUser();
 		Profile dataProfile = profileService.getUserProfile(user);
 		
-		
-		
 		if (!result.hasErrors()) {
 			dataProfile.saveEditedFields(profile);
 			profileService.save(dataProfile);
@@ -92,8 +90,6 @@ public class ProfileController {
 
 		SiteUser user = getUser();
 		Profile dataProfile = profileService.getUserProfile(user);
-		
-		
 		
 		if (!result.hasErrors()) {
 			dataProfile.saveEditedFields(profile);

@@ -22,7 +22,6 @@ public class CategoryController {
 	public ModelAndView camerasGET(ModelAndView modelAndView, 
 			@RequestParam(name="p", defaultValue = "1") int pageNumber){
 		
-		
 		Page<SearchResult> results = searchService.byCategory(ProductCategoryEnum.APARAT, pageNumber);
 		
 		modelAndView.getModel().put("url", "/cameras");
@@ -35,7 +34,6 @@ public class CategoryController {
 	@RequestMapping(value = "/lenses", method = RequestMethod.GET)
 	public ModelAndView lensesGET(ModelAndView modelAndView,
 			@RequestParam(name="p", defaultValue = "1") int pageNumber){
-		
 		
 		Page<SearchResult> results = searchService.byCategory(ProductCategoryEnum.OBIEKTYW, pageNumber);
 		

@@ -34,13 +34,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 						"/product/*",
 						"/search",
 						"/cameras",
-						"/lenses"
+						"/lenses",
+						"/customsearch"
 						)
 				.permitAll()
 				.antMatchers(
 						"/js/*",
 						"/css/*",
 						"/img/*"
+//						"/WEB-INF/**"
 						)
 				.permitAll()
 //			ONLY ADMIN ROLE

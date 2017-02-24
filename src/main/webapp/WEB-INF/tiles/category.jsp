@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="pagin" tagdir="/WEB-INF/tags"%>
-
+<c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 
 <div class="container home">
 	<div class="page-header">
@@ -19,7 +19,7 @@
 	<section class="col-xs-12 col-sm-6 col-md-12">
 		<article class="search-result row">
 			<div class="col-xs-12 col-sm-12 col-md-3">
-				<a href="/product/${result.productId}" title="Lorem ipsum" class="thumbnail"><img src="/productphoto?id=${result.productId}" alt="Lorem ipsum" /></a>
+				<a href="${contextRoot}/product/${result.productId}" title="Lorem ipsum" class="thumbnail"><img src="${contextRoot}/productphoto?id=${result.productId}" alt="Lorem ipsum" /></a>
 			</div>
 <!-- 			<div class="col-xs-12 col-sm-12 col-md-2"> -->
 <!-- 				<ul class="meta-search"> -->
@@ -29,7 +29,7 @@
 <!-- 				</ul> -->
 <!-- 			</div> -->
 			<div class="col-xs-12 col-sm-12 col-md-7 excerpet">
-				<h2 class="text-uppercase"><a href="/product/${result.productId}" title="">${result.name}</a></h2>
+				<h2 class="text-uppercase"><a href="${contextRoot}/product/${result.productId}" title="">${result.name}</a></h2>
 				<p>${result.description}</p>	
 				<h2 class="text-danger">${result.price} ZŁ</h2>					
 			</div>

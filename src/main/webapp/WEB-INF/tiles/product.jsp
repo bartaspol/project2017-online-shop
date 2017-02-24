@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 
 
 <div class="container home">
@@ -9,8 +11,8 @@
 	<div class="col-md-8 col-sm-8 ">
 		
 		<div class="text-center">
-				<a class="thumbnail" href="/product/${product.id}"> <img
-					 src="/productphoto?id=${product.id}" alt="some name">
+				<a class="thumbnail" href="${contextRoot}/product/${product.id}"> <img
+					 src="${contextRoot}/productphoto?id=${product.id}" alt="some name">
 				</a>
 			<p>Opis produktu:</p>
 			<p>${product.description}</p>
