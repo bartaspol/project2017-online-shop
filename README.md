@@ -22,5 +22,8 @@ One user has ADMIN privilages which allows to add, edit or delete products.
 - MySQL
 - Bootstrap 3
 - HTML, CSS
+- Git
+- Jenkins
+
 
 If you have any questions contact me on piatekbart@gmail.com
