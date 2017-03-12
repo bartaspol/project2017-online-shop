@@ -25,7 +25,7 @@
 <!-- 		VARIABLES -->
 			<c:url var="editButtonLink" value="editproduct?id=${product.id}"/>
 			<c:url var="deleteButtonLink" value="deleteproduct?id=${product.id}"/>
-			
+			<c:url var="orderButtonLink" value="orderproduct?id=${product.id}"/>
 <!-- 		PRODUCT  -->
 
 		<section class="col-xs-12 col-sm-6 col-md-12">
@@ -45,11 +45,17 @@
 					<p>${product.description}</p>	
 					<h2 class="text-danger">${product.price} ZŁ</h2>					
 				</div>
+				
 				<sec:authorize access="hasRole('ROLE_ADMIN')">
 					<div class="text-center">
 						<a href="${editButtonLink}" class="btn btn-info">Edytuj</a>
 						<a onclick="return confirm('Usunąć produkt?')" 
 							href="${deleteButtonLink}" class="btn btn-danger">Usuń</a> <br> <br>
+					</div>
+				</sec:authorize>
+				<sec:authorize access="hasRole('ROLE_USER')">
+					<div class="text-center">
+						<a href="${orderButtonLink}" class="btn btn-lg btn-danger">Zamów</a>
 					</div>
 				</sec:authorize>
 				<span class="clearfix borda"></span>

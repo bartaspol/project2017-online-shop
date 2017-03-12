@@ -1,12 +1,13 @@
 package pl.bartoszpiatek.model.entity;
 
-import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -50,6 +51,9 @@ public class SiteUser {
 	@Column(name = "USER_ROLE", length = 20)
 	private String role;
 	
+	@OneToMany(mappedBy = "user")
+	private List<Order> orders;
+ 	
 	@PrePersist
 	protected void onCreate() {
 		enabled = true;
@@ -85,6 +89,16 @@ public class SiteUser {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	
+	
+	public List<Order> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
 	}
 
 	public String getRole() {

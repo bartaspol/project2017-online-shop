@@ -12,10 +12,14 @@
 			</div>
 			<br>
 
+
 			<!-- 			CREATE FORM -->
 			<form:form class="form-signin" modelAttribute="product" enctype="multipart/form-data">
 			
 				<!-- 		ADD IMAGE-->
+				<div class="errors">
+					<form:errors path="name" />
+				</div>
 				<input type="file" accept="image/*" name="file"/><br>
 
 				<!-- 					add product name -->
@@ -29,7 +33,7 @@
 <!-- 										 choose category -->
 				<div class="form-group">
 					<label for="productCategory">Wybierz kategorię produktu:</label> 
-					<form:select class="form-control"  path="category">
+					<form:select  class="form-control"  path="category">
 						<form:options items="${categories}"/>
 					</form:select>
 				</div>

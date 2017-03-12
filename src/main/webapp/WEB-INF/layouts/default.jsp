@@ -34,7 +34,6 @@
 	<!-- 	SEARCH -->
 	<div class="row search-bar navbar-fixed-top">
 		<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-
 			<form action="${search}" method="get">
 <%-- 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> --%>
 
@@ -44,6 +43,7 @@
 						<button id="search-button" class="btn btn-primary" type="submit">Szukaj</button>
 					</span>
 				</div>
+				
 			</form>
 		</div>
 	</div>
@@ -92,6 +92,7 @@
 					<sec:authorize access="isAuthenticated()">
 					
 					<li><a href="${contextRoot}/profile"><i class="fa fa-user" aria-hidden="true"></i> Moje konto</a></li>
+					<li><a href="${contextRoot}/orderlist"><i class="fa fa-shopping-basket" aria-hidden="true"></i> Koszyk</a></li>
 					
 <!-- 				LOGOUT -->
 						<li><a href="javascript:$('#logoutForm').submit();">

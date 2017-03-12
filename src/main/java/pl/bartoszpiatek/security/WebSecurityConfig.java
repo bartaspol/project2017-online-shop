@@ -57,7 +57,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers(
 						"/profile",
 						"/editprofile",
-						"/editabout"
+						"/editabout",
+						"/orderproduct",
+						"/orderlist",
+						"/deleteFromOrder"
 						)
 				.authenticated()
 				.anyRequest()

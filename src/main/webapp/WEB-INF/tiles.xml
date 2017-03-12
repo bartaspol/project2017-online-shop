@@ -60,4 +60,8 @@
 	<definition name="app.category" extends="app.default">
 		<put-attribute name="content" value="/WEB-INF/tiles/category.jsp" />
 	</definition>
+	
+	<definition name="app.orderList" extends="app.default">
+		<put-attribute name="content" value="/WEB-INF/tiles/orderlist.jsp" />
+	</definition>
 </tiles-definitions>
