@@ -3,7 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 
-
 <div class="container home">
 	<div class="page-header">
 		<h1 class="text-danger text-center text-uppercase">${product.name}</h1>
@@ -25,7 +24,7 @@
 	<div class="col-md-4 col-sm-4 ">
 		<div class="thumbnail text-center">
 			<h2>${product.price} ZŁ</h2>
-			<a href="#" class="btn btn-danger" role="button">KUP TERAZ</a>
+			<a href="${contextRoot}/orderproduct?id=${product.id}" class="btn btn-danger" role="button">DODAJ DO KOSZYKA</a>
 		</div>
 		
 		<div class="panel panel-default">

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,9 +15,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import pl.bartoszpiatek.model.entity.Order;
 import pl.bartoszpiatek.model.entity.Product;
+import pl.bartoszpiatek.model.entity.Profile;
 import pl.bartoszpiatek.model.entity.SiteUser;
 import pl.bartoszpiatek.service.OrderService;
 import pl.bartoszpiatek.service.ProductService;
+import pl.bartoszpiatek.service.ProfileService;
 import pl.bartoszpiatek.service.SiteUserService;
 
 @Controller
@@ -30,6 +33,9 @@ public class OrderController {
 	
 	@Autowired
 	private ProductService productService;
+
+	@Autowired
+	private ProfileService profileService;
 	
 	@RequestMapping(value = "/orderproduct", method = RequestMethod.GET)
 	public ModelAndView orderProductPost(ModelAndView modelAndView, @RequestParam(name = "id") Long id){
@@ -71,6 +77,7 @@ public class OrderController {
 		
 		long orderId = order.getId();
 		
+		modelAndView.getModel().put("sumTotal", orderService.totalOrderPrice(order));
 		modelAndView.getModel().put("orderId", orderId);
 		modelAndView.getModel().put("order", products);
 		
@@ -87,10 +94,53 @@ public class OrderController {
 		Order order = orders.get(orders.size() - 1);
 		List<Product> products = order.getProducts();
 		
-		products.removeIf(x -> x.getId() == productId.longValue());
+		Product product = products.stream()
+								.filter(x -> x.getId() == productId.longValue())
+								.findFirst()
+								.get();
+		
+		products.remove(product);
 		orderService.save(order);
 		
-		modelAndView.setViewName("app.orderList");
+		modelAndView.setViewName("redirect:/orderlist");
+		return modelAndView;
+	}
+	
+	
+	@GetMapping("/ordersummary")
+	public ModelAndView placeOrderGET(ModelAndView modelAndView, @RequestParam(name = "orderId") Integer orderId){
+		
+		SiteUser user = getUser();
+		Profile profile = profileService.getUserProfile(user);
+		Profile safeProfile = new Profile();
+		safeProfile.safeProfileInformation(profile);
+		
+		List<Order> orders = user.getOrders();
+		Order order = orders.stream()
+							.filter(x -> x.getId() == orderId.longValue())
+							.findFirst()
+							.get();
+		
+		List<Product> products = order.getProducts();
+		
+		modelAndView.getModel().put("sumTotal", orderService.totalOrderPrice(order));
+		modelAndView.getModel().put("order", products);
+		modelAndView.getModel().put("profile", safeProfile);
+		modelAndView.setViewName("app.orderSummary");
+		return modelAndView;
+	}
+	
+	@GetMapping("/pay")
+	public ModelAndView placeOrderGET(ModelAndView modelAndView){
+		
+		SiteUser user = getUser();
+		Profile profile = profileService.getUserProfile(user);
+		Profile safeProfile = new Profile();
+		safeProfile.safeProfileInformation(profile);
+		
+		modelAndView.getModel().put("userEmail", user.getEmail());
+		modelAndView.getModel().put("profile", safeProfile);
+		modelAndView.setViewName("app.pay");
 		return modelAndView;
 	}
 	

@@ -124,7 +124,7 @@
 				<p>© 2017 Bartosz Piatek</p>
 			</div>
 			<div class="navbar-text pull-right">
-				<a href="https://github.com/bartaspol"><i
+				<a href="https://github.com/bartaspol/project2017-online-shop"><i
 					class="fa fa-github fa-2x" aria-hidden="true"></i></a>
 			</div>
 		</div>

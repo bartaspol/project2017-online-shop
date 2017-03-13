@@ -118,3 +118,8 @@ h1, h2, h3, h4, h5, h6 {
     height: 1px;
     margin: 20px 0;
 }
+
+.order-summary-adress,
+.order-summary-confirm{
+	margin-top: 4em;
+}

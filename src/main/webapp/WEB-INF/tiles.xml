@@ -64,4 +64,13 @@
 	<definition name="app.orderList" extends="app.default">
 		<put-attribute name="content" value="/WEB-INF/tiles/orderlist.jsp" />
 	</definition>
+	
+	<definition name="app.orderSummary" extends="app.default">
+		<put-attribute name="content" value="/WEB-INF/tiles/ordersummary.jsp" />
+	</definition>
+	
+	<definition name="app.pay" extends="app.default">
+		<put-attribute name="content" value="/WEB-INF/tiles/payfororder.jsp" />
+	</definition>
+	
 </tiles-definitions>
