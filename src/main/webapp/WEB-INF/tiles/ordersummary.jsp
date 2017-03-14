@@ -4,8 +4,8 @@
  <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
-<c:url var="editProfileLink" value="${contextRoot}/editprofile" />
-<c:url var="payLink" value="${contextRoot}/pay" />
+<c:url var="editProfileLink" value="/editprofile" />
+<c:url var="payLink" value="/pay" />
 
 <div class="container home">
 
