@@ -60,9 +60,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 						"/editabout",
 						"/orderproduct",
 						"/orderlist",
+						"/orderproduct2",
+						"/orderlist2",
+						"/deleteFromOrder2",
+						"/ordersummary2",
 						"/deleteFromOrder",
 						"/ordersummary",
-						"/pay"
+						"/pay",
+						"/orderhistory"
 						)
 				.authenticated()
 				.anyRequest()

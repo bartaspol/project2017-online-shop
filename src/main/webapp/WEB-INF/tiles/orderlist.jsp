@@ -5,7 +5,7 @@
  
 <!-- CONTEXT ROOT VARIABLE -->
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
-<c:url var="orderSummaryLink" value="ordersummary?orderId=${orderId}"/>
+<c:url var="orderSummaryLink" value="ordersummary"/>
     
     <div class="container home">
     
@@ -19,6 +19,7 @@
     		<c:otherwise>
     			<div class="jumbotron text-center">
 					<h1>BRAK PRODUKTÓW W KOSZYKU</h1>
+					<h3 class="text-danger"><a href="${contextRoot}/"> wróć do strony głównej</a></h3>
 				</div>
     		</c:otherwise>
     	</c:choose>
@@ -35,7 +36,7 @@
 				<div class="col-xs-12 col-sm-4 col-md-7 excerpet">
 					<h2 class="text-uppercase"><a href="${contextRoot}/product/${o.id}" title=""><strong>${o.name}</strong></a></h2>
 					<h3 class="text-danger">${o.price} ZŁ</h3>	
-					<h3>${orderId }</h3>				
+<%-- 					<h3>${orderId }</h3>				 --%>
 				</div>
 				<div class="text-center">
 						<a onclick="return confirm('Usunąć produkt z listy zamówienia?')" 

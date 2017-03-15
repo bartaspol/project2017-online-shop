@@ -91,7 +91,18 @@
 <!-- 				IF LOGGED IN -->
 					<sec:authorize access="isAuthenticated()">
 					
-					<li><a href="${contextRoot}/profile"><i class="fa fa-user" aria-hidden="true"></i> Moje konto</a></li>
+					<li role="presentation" class="dropdown">
+				    <a class="dropdown-toggle" data-toggle="dropdown" aria-hidden="true" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+				      Moje Konto <span class="caret"></span>
+				    </a>
+				    <ul class="dropdown-menu">
+				     	 <li><a href="${contextRoot}/profile"><i class="fa fa-user" aria-hidden="true"></i> Profil</a></li>
+    					<li><a href="${contextRoot}/orderhistory"><i class="fa fa-history" aria-hidden="true"></i> Historia zamówień</a></li>
+				    </ul>
+				  </li>
+					
+
+<%-- 					<li><a href="${contextRoot}/profile"><i class="fa fa-user" aria-hidden="true"></i> Moje konto</a></li> --%>
 					<li><a href="${contextRoot}/orderlist"><i class="fa fa-shopping-basket" aria-hidden="true"></i> Koszyk</a></li>
 					
 <!-- 				LOGOUT -->

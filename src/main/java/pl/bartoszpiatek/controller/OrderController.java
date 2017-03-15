@@ -37,8 +37,8 @@ public class OrderController {
 	@Autowired
 	private ProfileService profileService;
 	
-	@RequestMapping(value = "/orderproduct", method = RequestMethod.GET)
-	public ModelAndView orderProductPost(ModelAndView modelAndView, @RequestParam(name = "id") Long id){
+	@RequestMapping(value = "/orderproduct2", method = RequestMethod.GET)
+	public ModelAndView orderProductGET(ModelAndView modelAndView, @RequestParam(name = "id") Long id){
 		
 		
 		SiteUser user = getUser();
@@ -67,7 +67,7 @@ public class OrderController {
 	}
 	
 	
-	@RequestMapping(value = "/orderlist", method = RequestMethod.GET)
+	@RequestMapping(value = "/orderlist2", method = RequestMethod.GET)
 	public ModelAndView orderListGET(ModelAndView modelAndView){
 	
 		SiteUser user = getUser();
@@ -81,11 +81,11 @@ public class OrderController {
 		modelAndView.getModel().put("orderId", orderId);
 		modelAndView.getModel().put("order", products);
 		
-		modelAndView.setViewName("app.orderList");
+		modelAndView.setViewName("app.orderList2");
 		return modelAndView;
 	}
 	
-	@RequestMapping(value = "/deleteFromOrder", method = RequestMethod.GET)
+	@RequestMapping(value = "/deleteFromOrder2", method = RequestMethod.GET)
 	public ModelAndView deleteProductFromOrderGET(ModelAndView modelAndView,
 			 @RequestParam(name = "pid") Integer productId){
 		
@@ -102,12 +102,12 @@ public class OrderController {
 		products.remove(product);
 		orderService.save(order);
 		
-		modelAndView.setViewName("redirect:/orderlist");
+		modelAndView.setViewName("redirect:/orderlist2");
 		return modelAndView;
 	}
 	
 	
-	@GetMapping("/ordersummary")
+	@GetMapping("/ordersummary2")
 	public ModelAndView placeOrderGET(ModelAndView modelAndView, @RequestParam(name = "orderId") Integer orderId){
 		
 		SiteUser user = getUser();
@@ -130,7 +130,7 @@ public class OrderController {
 		return modelAndView;
 	}
 	
-	@GetMapping("/pay")
+	@GetMapping("/pay2")
 	public ModelAndView placeOrderGET(ModelAndView modelAndView){
 		
 		SiteUser user = getUser();

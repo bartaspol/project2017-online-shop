@@ -1,6 +1,7 @@
 package pl.bartoszpiatek.model.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -29,7 +30,7 @@ public class Order implements Serializable{
 	@JoinTable(name = "ORDER_PRODUCTS",
 			joinColumns = {@JoinColumn(name = "ORDER_ID", referencedColumnName = "ID_ORDER")},
 			inverseJoinColumns = {@JoinColumn(name = "PRODUCT_ID", referencedColumnName = "PRODUCT_ID")})
-	private List<Product> products;
+	private List<Product> products = new ArrayList<>();
 	
 	@ManyToOne
 	@JoinColumn(name = "USER_ID")

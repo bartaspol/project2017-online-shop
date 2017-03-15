@@ -9,7 +9,7 @@
 
 <div class="container home">
 
-<div class="jumbotron jumbotron-home text-center">
+	<div class="jumbotron jumbotron-home text-center">
 		<h1>SPRAWDZ ZAMÓWIENIE I ADRES</h1>
 	</div>
 <!-- 	<div class="page-header"> -->

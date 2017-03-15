@@ -73,4 +73,8 @@
 		<put-attribute name="content" value="/WEB-INF/tiles/payfororder.jsp" />
 	</definition>
 	
+	<definition name="app.orderHistory" extends="app.default">
+		<put-attribute name="content" value="/WEB-INF/tiles/orderhistory.jsp" />
+	</definition>
+	
 </tiles-definitions>
