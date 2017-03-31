@@ -27,3 +27,12 @@ One user has ADMIN privilages which allows to add, edit or delete products.
 
 
 If you have any questions contact me on piatekbart@gmail.com
+
+Admin login: bart@gmail.com
+Admin pass:  bartaspol1
+
+Test user login: test@gmail.com 
+Test user pass:  tests
+
+Feel free to create your own account.
+You don't have to type real email adress!
