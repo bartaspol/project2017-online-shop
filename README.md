@@ -1,3 +1,4 @@
+![alt](http://i66.tinypic.com/20zv2ue.png)
 online shop by Bartosz Piątek
 
 <h1>Online shop</h1>
