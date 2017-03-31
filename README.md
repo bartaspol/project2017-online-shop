@@ -16,17 +16,16 @@ One user has ADMIN privilages which allows to add, edit or delete products.
 - stored passwords are BCrypt encrypted
 
 <h2>Technologies used to create project</h2>
-- Spring Boot (e.g. Data, Security)
-- Apache Tiles 3
-- JSP / JSTL
-- MySQL
-- Bootstrap 3
-- HTML, CSS
-- Git
-- Jenkins
-
-
-If you have any questions contact me on piatekbart@gmail.com
+  <ul>
+  <li>- Spring Boot (e.g. Data, Security)</li>
+  <li>- Apache Tiles 3</li>
+  <li>- JSP / JSTL</li>
+  <li>- MySQL</li>
+  <li>- Bootstrap 3</li>
+  <li>- HTML, CSS</li>
+  <li>- Git</li>
+  <li>- Jenkins</li>
+</ul>
 
 Admin login: bart@gmail.com <br>
 Admin pass:  bartaspol1
@@ -36,3 +35,6 @@ Test user pass:  tests
 
 Feel free to create your own account.<br>
 You don't have to type real email adress!
+
+
+If you have any questions contact me on piatekbart@gmail.com
