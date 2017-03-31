@@ -1,7 +1,9 @@
-# project2017-online-shop
-Spring Boot Project
+online shop by Bartosz Piątek
 
-<h1>This is the project which I have created to showcase my programming skills.</h1>
+<h1>Online shop</h1>
+<br>
+Working page under this link <strong>http://92.222.93.244:8080/project2017/</strong>
+<br>
 It is going to be an <strong>online shop</strong> with possibility to register new users on, 
 update an edit their profiles with personal details and add products they want to buy
 to the shopping cart and make an order.
