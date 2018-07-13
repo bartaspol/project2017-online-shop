@@ -3,7 +3,7 @@ online shop by Bartosz Piątek
 
 <h1>Online shop</h1>
 <br>
-Working page under this link <strong>http://92.222.93.244:8080/project2017/</strong>
+Working page under this link <strong>http://54.38.52.202:8080/project2017/</strong>
 <br>
 It is going to be an <strong>online shop</strong> with possibility to register new users on, 
 update an edit their profiles with personal details and add products they want to buy
